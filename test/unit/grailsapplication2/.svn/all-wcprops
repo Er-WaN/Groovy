@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/a2gl-violet/!svn/ver/22/test/unit/grailsapplication2
+END
+UserControllerTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/a2gl-violet/!svn/ver/22/test/unit/grailsapplication2/UserControllerTests.groovy
+END
+UserRoleControllerTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/a2gl-violet/!svn/ver/22/test/unit/grailsapplication2/UserRoleControllerTests.groovy
+END
+RoleControllerTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/a2gl-violet/!svn/ver/22/test/unit/grailsapplication2/RoleControllerTests.groovy
+END

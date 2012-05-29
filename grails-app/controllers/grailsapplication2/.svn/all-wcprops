@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/a2gl-violet/!svn/ver/17/grails-app/controllers/grailsapplication2
+END
+UserController.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/a2gl-violet/!svn/ver/17/grails-app/controllers/grailsapplication2/UserController.groovy
+END
+RoleController.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/a2gl-violet/!svn/ver/17/grails-app/controllers/grailsapplication2/RoleController.groovy
+END
+UserRoleController.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/a2gl-violet/!svn/ver/17/grails-app/controllers/grailsapplication2/UserRoleController.groovy
+END

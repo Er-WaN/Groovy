@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/a2gl-violet/!svn/ver/14/grails-app/conf
+END
+DataSource.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/a2gl-violet/!svn/ver/18/grails-app/conf/DataSource.groovy
+END
+UrlMappings.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/a2gl-violet/!svn/ver/1/grails-app/conf/UrlMappings.groovy
+END
+Config.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/a2gl-violet/!svn/ver/18/grails-app/conf/Config.groovy
+END
+BuildConfig.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/a2gl-violet/!svn/ver/1/grails-app/conf/BuildConfig.groovy
+END
+BootStrap.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/a2gl-violet/!svn/ver/18/grails-app/conf/BootStrap.groovy
+END

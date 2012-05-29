@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/a2gl-violet/!svn/ver/16/grails-app/controllers/cuisine
+END
+MenuController.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/a2gl-violet/!svn/ver/16/grails-app/controllers/cuisine/MenuController.groovy
+END
+PlatController.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/a2gl-violet/!svn/ver/16/grails-app/controllers/cuisine/PlatController.groovy
+END
+TypePlatController.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/a2gl-violet/!svn/ver/16/grails-app/controllers/cuisine/TypePlatController.groovy
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/a2gl-violet/!svn/ver/1/grails-app/domain/grailsapplication2
+END
+User.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/a2gl-violet/!svn/ver/1/grails-app/domain/grailsapplication2/User.groovy
+END
+Role.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/a2gl-violet/!svn/ver/1/grails-app/domain/grailsapplication2/Role.groovy
+END
+UserRole.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/a2gl-violet/!svn/ver/1/grails-app/domain/grailsapplication2/UserRole.groovy
+END

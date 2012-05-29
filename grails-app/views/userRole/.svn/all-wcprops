@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/a2gl-violet/!svn/ver/20/grails-app/views/userRole
+END
+edit.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/a2gl-violet/!svn/ver/20/grails-app/views/userRole/edit.gsp
+END
+create.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/a2gl-violet/!svn/ver/20/grails-app/views/userRole/create.gsp
+END
+show.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/a2gl-violet/!svn/ver/20/grails-app/views/userRole/show.gsp
+END
+list.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/a2gl-violet/!svn/ver/20/grails-app/views/userRole/list.gsp
+END

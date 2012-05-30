@@ -77,6 +77,12 @@ class PlatController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'plat.label', default: 'Plat'), params.id])}"
             redirect(action: "list")
         }
+        
+        params.menus.each()
+        { 
+            def m = cuisine.Menu.get(it)
+            cuisine.Plat.get(params.id).addToMenus(m)
+        }
     }
 
     def delete = {

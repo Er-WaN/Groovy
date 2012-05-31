@@ -12,7 +12,7 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="Accueil"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="Liste des menus" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="Nouveau Menu" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="Nouveau menu" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="show-menu" class="content scaffold-show" role="main">

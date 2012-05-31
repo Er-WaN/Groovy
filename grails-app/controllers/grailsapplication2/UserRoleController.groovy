@@ -20,7 +20,11 @@ class UserRoleController {
     }
 
     def save = {
+        println("save1:")
+        println(params)
         def userRoleInstance = new UserRole(params)
+        println("save2:")
+        println(userRoleInstance)
         if (userRoleInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'userRole.label', default: 'UserRole'), userRoleInstance.id])}"
             redirect(action: "show", id: userRoleInstance.id)

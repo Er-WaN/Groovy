@@ -43,14 +43,14 @@
         <td>
            <table style="margin-top:30px;margin-left:20px;margin-right:20px;">
             <tr>
-              <td align="center"><input type="button" value="1" class="button" onclick="nb1()"/></td>
-              <td align="center"><input type="button" value="2" class="button" onclick="nb2()"/></td>
-              <td align="center"><input type="button" value="3" class="button" onclick="nb3()"/></td>
+              <td align="center"><input type="button" value="1" class="button" onclick="nb(1)"/></td>
+              <td align="center"><input type="button" value="2" class="button" onclick="nb(2)"/></td>
+              <td align="center"><input type="button" value="3" class="button" onclick="nb(3)"/></td>
            </tr>
            <tr>
-              <td align="center"><input type="button" value="4" class="button" onclick="nb4()"/></td>
-              <td align="center"><input type="button" value="5" class="button" onclick="nb5()"/></td>
-              <td align="center"><input type="button" value="6" class="button" onclick="nb6()"/></td>
+              <td align="center"><input type="button" value="4" class="button" onclick="nb(4)"/></td>
+              <td align="center"><input type="button" value="5" class="button" onclick="nb(5)"/></td>
+              <td align="center"><input type="button" value="6" class="button" onclick="nb(6)"/></td>
            </tr>
           </table>
         </td>
@@ -64,29 +64,9 @@
 
 <script language=javascript> 
 
-function nb1()
+function nb(nombre)
 { 
-document.location.href = "choix_formule/1"; 
+document.location.href = "choix_formule/"+nombre; 
 }
-function nb2()
-{ 
-document.location.href = "choix_formule/2"; 
-} 
-function nb3()
-{ 
-document.location.href = "choix_formule/3"; 
-} 
-function nb4()
-{ 
-document.location.href = "choix_formule/4"; 
-} 
-function nb5()
-{ 
-document.location.href = "choix_formule/5"; 
-}
-function nb6()
-{ 
-document.location.href = "choix_formule/5"; 
-} 
 
 </script> 

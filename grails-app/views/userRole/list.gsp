@@ -20,26 +20,16 @@
             <div class="list">
                 <table>
                     <thead>
-                        <tr>
-                        
-                            <g:sortableColumn property="id" title="${message(code: 'userRole.id.label', default: 'Id')}" />
-                        
-                            <th><g:message code="userRole.role.label" default="Role" /></th>
-                        
+                        <tr>                                                
                             <th><g:message code="userRole.user.label" default="User" /></th>
-                        
+                            <th><g:message code="userRole.role.label" default="Role" /></th>
                         </tr>
                     </thead>
                     <tbody>
                     <g:each in="${userRoleInstanceList}" status="i" var="userRoleInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        
-                            <td><g:link action="show" id="${userRoleInstance.id}">${fieldValue(bean: userRoleInstance, field: "id")}</g:link></td>
-                        
-                            <td>${fieldValue(bean: userRoleInstance, field: "role")}</td>
-                        
-                            <td>${fieldValue(bean: userRoleInstance, field: "user")}</td>
-                        
+                            <td>${grailsapplication2.User.get(userRoleInstance.user.id).username}</td>                
+                            <td>${grailsapplication2.Role.get(userRoleInstance.role.id).authority}</td> 
                         </tr>
                     </g:each>
                     </tbody>

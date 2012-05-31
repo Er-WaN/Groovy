@@ -1,49 +1,39 @@
-
-
 <%@ page import="grailsapplication2.Role" %>
+<!doctype html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'role.label', default: 'Role')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title><g:message code="Créer rôle" args="[entityName]" /></title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-        </div>
-        <div class="body">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
+        <a href="#create-role" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+	<div class="nav" role="navigation">
+		<ul>
+			<li><a class="home" href="${createLink(uri: '/')}"><g:message code="Accueil"/></a></li>
+			<li><g:link class="list" action="list"><g:message code="Listes des rôles" args="[entityName]" /></g:link></li>
+		</ul>
+	</div>
+        <div id="create-role" class="content scaffold-create" role="main">
+            <h1><g:message code="Créer rôle" args="[entityName]" /></h1>
+            <g:if test="${flash.message}" role="status">
             <div class="message">${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${roleInstance}">
-            <div class="errors">
-                <g:renderErrors bean="${roleInstance}" as="list" />
-            </div>
+            <ul class="errors" role="alert">
+                <g:eachError bean="${roleInstance}" var="error">
+				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+				</g:eachError>
+            </ul>
             </g:hasErrors>
             <g:form action="save" >
-                <div class="dialog">
-                    <table>
-                        <tbody>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="authority"><g:message code="role.authority.label" default="Authority" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: roleInstance, field: 'authority', 'errors')}">
-                                    <g:textField name="authority" value="${roleInstance?.authority}" />
-                                </td>
-                            </tr>
-                        
-                        </tbody>
-                    </table>
-                </div>
-                <div class="buttons">
-                    <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
-                </div>
-            </g:form>
-        </div>
-    </body>
+				<fieldset class="form">
+					<g:render template="form"/>
+				</fieldset>
+				<fieldset class="buttons">
+					<g:submitButton name="create" class="save" value="${message(code: 'Créer', default: 'Créer')}" />
+				</fieldset>
+			</g:form>
+		</div>
+	</body>
 </html>

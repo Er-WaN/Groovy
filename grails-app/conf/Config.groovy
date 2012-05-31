@@ -96,11 +96,11 @@ grails.plugins.springsecurity.authority.className = 'grailsapplication2.Role'
 
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
-   '/client/**'         : ['ROLE_COOKER', 'ROLE_DIRECTOR', 'ROLE_USER', 'ROLE_SERVER'],
    '/role/**'           : ['ROLE_DIRECTOR'],
    '/userRole/**'       : ['ROLE_DIRECTOR'],
    '/Menu/**'           : ['ROLE_COOKER', 'ROLE_DIRECTOR'],
    '/Plat/**'           : ['ROLE_COOKER', 'ROLE_DIRECTOR'],
    '/TypePlat/**'       : ['ROLE_COOKER', 'ROLE_DIRECTOR'],
-   '/user/**'           : ['ROLE_DIRECTOR']
+   '/user/**'           : ['ROLE_DIRECTOR'],
+   '/serveur/**'        : ['ROLE_SERVER']
 ]

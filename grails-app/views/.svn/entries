@@ -119,12 +119,19 @@ dir
 role
 dir
 
+serveur
+dir
+
+
+
+add
+
 serveur.gsp
 file
 
 
 
-
+delete
 2012-05-29T18:26:26.000000Z
 8f0a431a0b1aeef89d3cbeb707a95bb6
 2012-05-29T12:29:42.465604Z
@@ -158,7 +165,7 @@ file
 
 
 
-
+delete
 2012-05-29T18:26:26.000000Z
 8fe4c6d7b474321eb07c612dd801674e
 2012-05-29T12:29:42.465604Z
@@ -192,7 +199,7 @@ file
 
 
 
-
+delete
 2012-05-29T18:26:26.000000Z
 2dc9630420a5fd43421e5e5682d30a8f
 2012-05-29T12:29:42.465604Z
@@ -223,6 +230,10 @@ yea
 
 serveur_restaurant
 dir
+
+
+
+delete
 
 typePlat
 dir

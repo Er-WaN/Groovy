@@ -4,7 +4,7 @@ dir
 14
 https://svn.forge.isep.fr/svn/a2gl-violet/grails-app/views/serveur_restaurant
 https://svn.forge.isep.fr/svn/a2gl-violet
-
+delete
 
 
 2012-05-29T12:18:40.920779Z
@@ -31,7 +31,7 @@ file
 
 
 
-
+delete
 2012-05-29T18:26:26.000000Z
 819b934d230fe7fd5dcecd342bd425d4
 2012-05-29T12:18:40.920779Z

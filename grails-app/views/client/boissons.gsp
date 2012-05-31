@@ -55,7 +55,7 @@
 
 function retour()
 { 
-document.location.href = "client_1.gsp"; 
+document.location.href = "../choix_formule/"; 
 } 
 
 </script> 

@@ -2,14 +2,11 @@ package client
 
 class ClientController {
 
-    def la_carte() { }
+    def index() { }
     
-    def accueil(){}
+    def carte(){}
     
-    def choix_formule()
-    {
-        println(params)
-    }
+    def choix_formule() {}
     
     def boissons(){}
     

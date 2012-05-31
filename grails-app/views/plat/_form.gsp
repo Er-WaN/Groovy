@@ -1,9 +1,6 @@
 <%@ page import="cuisine.Plat" %>
 
 
-
-
-
 <div class="fieldcontain ${hasErrors(bean: platInstance, field: 'libelle', 'error')} ">
 	<label for="libelle">
 		<g:message code="plat.libelle.label" default="Libelle : " />

@@ -65,16 +65,16 @@
 
 function boissons()
 { 
-document.location.href = "boissons.gsp"; 
+document.location.href = "../boissons/"; 
 } 
 
 function retour()
 { 
-document.location.href = "../accueil"; 
+document.location.href = "../index"; 
 } 
 
 function carte()
 { 
-document.location.href = "la_carte.gsp"; 
+document.location.href = "../carte/"; 
 } 
 </script> 

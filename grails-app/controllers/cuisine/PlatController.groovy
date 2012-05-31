@@ -20,6 +20,7 @@ class PlatController {
     }
 
     def save = {
+        println("apres")
         def platInstance = new Plat(params)
         if (platInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'plat.label', default: 'Plat'), platInstance.id])}"
@@ -28,6 +29,14 @@ class PlatController {
         else {
             render(view: "create", model: [platInstance: platInstance])
         }
+        
+        println(params)
+        params.menus.each()
+        { 
+            def m = cuisine.Menu.get(it)
+            cuisine.Plat.get(platInstance.id).addToMenus(m)
+        }
+        
     }
 
     def show = {

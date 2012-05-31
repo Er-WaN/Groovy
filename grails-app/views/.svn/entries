@@ -26,6 +26,13 @@ svn:special svn:externals svn:needs-lock
 
 abd498e5-8565-4000-9752-f003630421d7
 
+client
+dir
+
+
+
+add
+
 client_restaurant
 dir
 

@@ -8,12 +8,14 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
-        </div>
-        <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+      <div class="nav" role="navigation">
+        <ul>
+            <li><a class="home" href="${createLink(uri: '/')}"><g:message code="Accueil"/></a></li>
+            <li><g:link class="create" action="create"><g:message code="Assigner les rôles" args="[entityName]" /></g:link></li>
+        </ul>
+      </div>
+        <div id="list-userRole" class="content scaffold-role" role="main">
+          <h1 style="border-bottom:1px"><g:message code="Assignation des droits" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -21,8 +23,8 @@
                 <table>
                     <thead>
                         <tr>                                                
-                            <th><g:message code="userRole.user.label" default="User" /></th>
-                            <th><g:message code="userRole.role.label" default="Role" /></th>
+                            <g:sortableColumn property="user" title="${message(code: 'plat.user.label', default: 'Utilisateur')}" />
+                            <g:sortableColumn property="role" title="${message(code: 'plat.role.label', default: 'Rôle')}" />
                         </tr>
                     </thead>
                     <tbody>
@@ -35,7 +37,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="paginateButtons">
+            <div class="pagination">
                 <g:paginate total="${userRoleInstanceTotal}" />
             </div>
         </div>

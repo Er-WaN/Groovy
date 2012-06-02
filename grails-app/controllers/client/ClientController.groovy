@@ -10,5 +10,7 @@ class ClientController {
     
     def boissons(){}
     
+    def menus() {}
+    
     
 }

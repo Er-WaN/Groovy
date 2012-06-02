@@ -36,9 +36,9 @@
                                                 
                             <td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
                                                 
-                            <td><g:formatBoolean boolean="${userInstance.enabled}" /></td>
+                            <td>${userInstance.getAuthorities().authority[0]}</td>
                             
-                            <td></td>
+                            <td>${userInstance.enabled ? "oui" : "non"}</td>
                         
                         </tr>
                     </g:each>

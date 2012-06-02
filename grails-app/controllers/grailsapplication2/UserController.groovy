@@ -19,10 +19,12 @@ class UserController {
         return [userInstance: userInstance]
     }
 
-    def save = {
+    def save = {     
         def userInstance = new User(params)
         if (userInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])}"
+            def r = grailsapplication2.Role.get(params.role_id)
+            grailsapplication2.UserRole.create(userInstance, r)
             redirect(action: "show", id: userInstance.id)
         }
         else {
@@ -53,7 +55,10 @@ class UserController {
     }
 
     def update = {
-        def userInstance = User.get(params.id)
+        def userInstance = User.get(params.id)   
+        def u = grailsapplication2.User.get(params.id)
+        def r = grailsapplication2.Role.get(params.role_id)
+        grailsapplication2.UserRole.update_ur(u, r)    
         if (userInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -83,6 +88,14 @@ class UserController {
         def userInstance = User.get(params.id)
         if (userInstance) {
             try {
+                if (grailsapplication2.User.get(params.id).getAuthorities())
+                {
+                    def r_id = grailsapplication2.User.get(params.id).getAuthorities().id[0]
+                    def r = grailsapplication2.Role.get(r_id)
+                    def u = grailsapplication2.User.get(params.id)
+                    grailsapplication2.UserRole.remove(u, r)
+                }             
+                
                 userInstance.delete(flush: true)
                 flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'user.label', default: 'User'), params.id])}"
                 redirect(action: "list")

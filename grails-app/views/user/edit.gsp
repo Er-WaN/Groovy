@@ -47,6 +47,16 @@
                                         </label>
                                         <g:checkBox id="enabled" name="enabled" value="${userInstance.enabled}"/>
                                   </div>
+                                  
+                                  <div class="fieldcontain ${hasErrors(bean: UserInstance, field: 'enabled', 'error')} ">
+	
+                                  <div class="fieldcontain ${hasErrors(bean: UserInstance, field: 'role_id', 'error')} ">
+                                        <label for="role_id">
+                                                <g:message code="User.role_id.label" default="Rôle" />
+		
+                                        </label>
+                                        <g:select optionValue="authority" name="role_id" from="${grailsapplication2.Role.list()}" optionKey="id" value="${userInstance.getAuthorities().id[0]}"  />
+                                  </div>
 
 				</fieldset>
 				<fieldset class="buttons">

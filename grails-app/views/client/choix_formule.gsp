@@ -8,7 +8,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Client</title>
+    <title>Nos formules</title>
     <style type='text/css' media='screen'>
     
     .title{
@@ -38,9 +38,9 @@
         
     <table style="margin-top:30px;margin-left:20px;margin-right:20px;">
         <tr>
-           <td align="center"><input type="button" value="Boissons" class="button" onclick="boissons()"/></td>
+           <td align="center"><input type="button" value="Boissons" class="button" onclick="boisson()"/></td>
            <td align="center"><input type="button" value="Plat à la carte" class="button" onclick="carte()"/></td>
-           <td align="center"><input type="button" value="Formules" class="button" onclick="formule()"/></td>
+           <td align="center"><input type="button" value="Menus" class="button" onclick="menu()"/></td>
         </tr>
         <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
         <tr>
@@ -63,7 +63,7 @@
 
 <script language=javascript> 
 
-function boissons()
+function boisson()
 { 
 document.location.href = "../boissons/"; 
 } 
@@ -76,5 +76,10 @@ document.location.href = "../index";
 function carte()
 { 
 document.location.href = "../carte/"; 
+}
+
+function menu()
+{ 
+document.location.href = "../menus/"; 
 } 
 </script> 

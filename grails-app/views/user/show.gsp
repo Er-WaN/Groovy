@@ -51,14 +51,19 @@
 				</li>
 				</g:if>
                           
-                                <g:if test="${userInstance?.enabled}">
 				<li class="fieldcontain">
-					<span id="enabled-label" class="property-label"><g:message code="user.enabled.label" default="enabled" /></span>
+					<span id="enabled-label" class="property-label"><g:message code="user.enabled.label" default="Activer" /></span>
 					
-						<span class="property-value" aria-labelledby="enabled-label"><g:fieldValue bean="${userInstance}" field="enabled"/></span>
+						<span class="property-value" aria-labelledby="enabled-label">${userInstance.enabled ? "oui" : "non"}</span>
 					
 				</li>
-				</g:if>
+                                
+                                <li class="fieldcontain">
+					<span id="role-label" class="property-label"><g:message code="user.role.label" default="Rôle" /></span>
+					
+						<span class="property-value" aria-labelledby="role-label">${userInstance.getAuthorities() ? userInstance.getAuthorities().authority[0] : "aucun"}</span>
+					
+				</li>
                           
                                 <g:if test="${userInstance?.passwordExpired}">
 				<li class="fieldcontain">

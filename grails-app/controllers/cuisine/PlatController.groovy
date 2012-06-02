@@ -35,8 +35,8 @@ class PlatController {
         println(params)
         params.menus.each()
         { 
-            def m = cuisine.Menu.get(it)
-            cuisine.Plat.get(platInstance.id).addToMenus(m)
+            def m = Menu.get(it)
+            Plat.get(platInstance.id).addToMenus(m)
         }
         
     }
@@ -91,8 +91,8 @@ class PlatController {
         
         params.menus.each()
         { 
-            def m = cuisine.Menu.get(it)
-            cuisine.Plat.get(params.id).addToMenus(m)
+            def m = Menu.get(it)
+            Plat.get(params.id).addToMenus(m)
         }
     }
 

@@ -35,6 +35,10 @@ add
 
 client_restaurant
 dir
+
+
+
+delete
 
 error.gsp
 file

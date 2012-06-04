@@ -74,7 +74,7 @@ dir
 
 
 
-replace
+delete
 
 stacktrace.log
 file

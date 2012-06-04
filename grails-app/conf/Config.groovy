@@ -104,3 +104,5 @@ grails.plugins.springsecurity.interceptUrlMap = [
    '/user/**'           : ['ROLE_DIRECTOR'],
    '/serveur/**'        : ['ROLE_SERVER']
 ]
+
+jodatime.format.html5 = true

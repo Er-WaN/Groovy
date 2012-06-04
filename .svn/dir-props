@@ -1,9 +1,10 @@
 K 10
 svn:ignore
-V 35
+V 46
 .settings
 .project
 .classpath
 .git
+.gitignore
 
 END

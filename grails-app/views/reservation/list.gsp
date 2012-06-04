@@ -46,13 +46,13 @@
 					
 						<td>${fieldValue(bean: reservationInstance, field: "nombre_personnes")}</td>
                                                 
-                                                <td><g:formatDate date="${reservationInstance.dat}" /></td>
+                                                <td><g:formatDate format="dd-MM-yyyy" date="${reservationInstance.dat}" /></td>
 					
-						<td>${reservationInstance.heure+":"+reservationInstance.minute}</td>
+						<td>${reservationInstance.heure}:${reservationInstance.minute == 0 ? "00" : reservationInstance.minute}</td>
                                                 
 						<td>${fieldValue(bean: reservationInstance, field: "commentaire")}</td>
 					
-						<td>${fieldValue(bean: reservationInstance, field: "table_id")}</td>					
+						<td>${reservationInstance.table.id}</td>					
 					</tr>
 				</g:each>
 				</tbody>

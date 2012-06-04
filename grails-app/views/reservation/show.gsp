@@ -63,7 +63,7 @@
 				<li class="fieldcontain">
 					<span id="heure-label" class="property-label"><g:message code="reservation.heure.label" default="Heure" /></span>
 					
-						<span class="property-value" aria-labelledby="heure-label"><g:fieldValue bean="${reservationInstance}" field="heure"/>h<g:fieldValue bean="${reservationInstance}" field="minute"/></span>
+						<span class="property-value" aria-labelledby="heure-label">${reservationInstance.heure}:${reservationInstance.minute == 0 ? "00" : reservationInstance.minute}</span>
 					
 				</li>
 				</g:if>

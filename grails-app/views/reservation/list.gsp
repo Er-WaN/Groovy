@@ -11,12 +11,12 @@
 		<a href="#list-reservation" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="Accueil"/></a></li>
+				<li><g:link class="create" action="create"><g:message code="Nouvelle réservation" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-reservation" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1><g:message code="Liste des réservations" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="commentaire" title="${message(code: 'reservation.commentaire.label', default: 'Commentaire')}" />
+						<g:sortableColumn property="heure" title="${message(code: 'reservation.heure.label', default: 'Nom du client')}" />
 					
-						<g:sortableColumn property="dat" title="${message(code: 'reservation.dat.label', default: 'Dat')}" />
+						<g:sortableColumn property="minute" title="${message(code: 'reservation.minute.label', default: 'Nombre de personnes')}" />
 					
-						<g:sortableColumn property="heure" title="${message(code: 'reservation.heure.label', default: 'Heure')}" />
+						<g:sortableColumn property="commentaire" title="${message(code: 'reservation.commentaire.label', default: 'Date')}" />
 					
-						<g:sortableColumn property="nom_client" title="${message(code: 'reservation.nom_client.label', default: 'Nomclient')}" />
+						<g:sortableColumn property="dat" title="${message(code: 'reservation.dat.label', default: 'Heure')}" />
 					
-						<g:sortableColumn property="nombre_personnes" title="${message(code: 'reservation.nombre_personnes.label', default: 'Nombrepersonnes')}" />
+						<g:sortableColumn property="nom_client" title="${message(code: 'reservation.nom_client.label', default: 'Commentaire')}" />
 					
-						<g:sortableColumn property="table_id" title="${message(code: 'reservation.table_id.label', default: 'Tableid')}" />
+						<g:sortableColumn property="nombre_personnes" title="${message(code: 'reservation.nombre_personnes.label', default: 'Table')}" />
 					
 					</tr>
 				</thead>
@@ -42,18 +42,17 @@
 				<g:each in="${reservationInstanceList}" status="i" var="reservationInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${reservationInstance.id}">${fieldValue(bean: reservationInstance, field: "commentaire")}</g:link></td>
-					
-						<td><g:formatDate date="${reservationInstance.dat}" /></td>
-					
-						<td>${fieldValue(bean: reservationInstance, field: "heure")}</td>
-					
-						<td>${fieldValue(bean: reservationInstance, field: "nom_client")}</td>
+						<td><g:link action="show" id="${reservationInstance.id}">${fieldValue(bean: reservationInstance, field: "nom_client")}</g:link></td>
 					
 						<td>${fieldValue(bean: reservationInstance, field: "nombre_personnes")}</td>
+                                                
+                                                <td><g:formatDate date="${reservationInstance.dat}" /></td>
 					
-						<td>${fieldValue(bean: reservationInstance, field: "table_id")}</td>
+						<td>${reservationInstance.heure+":"+reservationInstance.minute}</td>
+                                                
+						<td>${fieldValue(bean: reservationInstance, field: "commentaire")}</td>
 					
+						<td>${fieldValue(bean: reservationInstance, field: "table_id")}</td>					
 					</tr>
 				</g:each>
 				</tbody>

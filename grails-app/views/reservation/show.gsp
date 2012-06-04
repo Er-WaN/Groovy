@@ -11,17 +11,62 @@
 		<a href="#show-reservation" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="Accueil"/></a></li>
+				<li><g:link class="list" action="list"><g:message code="Liste des réservations" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="Nouvelle réservation" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="show-reservation" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1><g:message code="Réservation de M/Mme : ${reservationInstance.nom_client}" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list reservation">
+			
+				<g:if test="${reservationInstance?.nom_client}">
+				<li class="fieldcontain">
+					<span id="nom_client-label" class="property-label"><g:message code="reservation.nom_client.label" default="Nom du client" /></span>
+					
+						<span class="property-value" aria-labelledby="nom_client-label"><g:fieldValue bean="${reservationInstance}" field="nom_client"/></span>
+					
+				</li>
+				</g:if>
+                          
+                                <g:if test="${reservationInstance?.nombre_personnes}">
+				<li class="fieldcontain">
+					<span id="nombre_personnes-label" class="property-label"><g:message code="reservation.nombre_personnes.label" default="Nombre de personnes" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre_personnes-label"><g:fieldValue bean="${reservationInstance}" field="nombre_personnes"/></span>
+					
+				</li>
+				</g:if>
+                          
+                                <g:if test="${reservationInstance?.table}">
+				<li class="fieldcontain">
+					<span id="table-label" class="property-label"><g:message code="reservation.table.label" default="Table" /></span>
+					
+						<span class="property-value" aria-labelledby="table-label"><g:link controller="tabl" action="show" id="${reservationInstance?.table?.id}">${reservationInstance?.table?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+                          
+                                <g:if test="${reservationInstance?.dat}">
+				<li class="fieldcontain">
+					<span id="dat-label" class="property-label"><g:message code="reservation.dat.label" default="Date" /></span>
+					
+						<span class="property-value" aria-labelledby="dat-label"><g:formatDate format="dd-MM-yyyy" date="${reservationInstance?.dat}" /></span>
+					
+				</li>
+				</g:if>
+                          
+                                <g:if test="${reservationInstance?.heure}">
+				<li class="fieldcontain">
+					<span id="heure-label" class="property-label"><g:message code="reservation.heure.label" default="Heure" /></span>
+					
+						<span class="property-value" aria-labelledby="heure-label"><g:fieldValue bean="${reservationInstance}" field="heure"/>h<g:fieldValue bean="${reservationInstance}" field="minute"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${reservationInstance?.commentaire}">
 				<li class="fieldcontain">
@@ -32,57 +77,18 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${reservationInstance?.dat}">
-				<li class="fieldcontain">
-					<span id="dat-label" class="property-label"><g:message code="reservation.dat.label" default="Dat" /></span>
-					
-						<span class="property-value" aria-labelledby="dat-label"><g:formatDate date="${reservationInstance?.dat}" /></span>
-					
-				</li>
-				</g:if>
+				
 			
-				<g:if test="${reservationInstance?.heure}">
-				<li class="fieldcontain">
-					<span id="heure-label" class="property-label"><g:message code="reservation.heure.label" default="Heure" /></span>
-					
-						<span class="property-value" aria-labelledby="heure-label"><g:fieldValue bean="${reservationInstance}" field="heure"/></span>
-					
-				</li>
-				</g:if>
+				
 			
-				<g:if test="${reservationInstance?.nom_client}">
-				<li class="fieldcontain">
-					<span id="nom_client-label" class="property-label"><g:message code="reservation.nom_client.label" default="Nomclient" /></span>
-					
-						<span class="property-value" aria-labelledby="nom_client-label"><g:fieldValue bean="${reservationInstance}" field="nom_client"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${reservationInstance?.nombre_personnes}">
-				<li class="fieldcontain">
-					<span id="nombre_personnes-label" class="property-label"><g:message code="reservation.nombre_personnes.label" default="Nombrepersonnes" /></span>
-					
-						<span class="property-value" aria-labelledby="nombre_personnes-label"><g:fieldValue bean="${reservationInstance}" field="nombre_personnes"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${reservationInstance?.table_id}">
-				<li class="fieldcontain">
-					<span id="table_id-label" class="property-label"><g:message code="reservation.table_id.label" default="Tableid" /></span>
-					
-						<span class="property-value" aria-labelledby="table_id-label"><g:fieldValue bean="${reservationInstance}" field="table_id"/></span>
-					
-				</li>
-				</g:if>
+				
 			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${reservationInstance?.id}" />
-					<g:link class="edit" action="edit" id="${reservationInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link class="edit" action="edit" id="${reservationInstance?.id}"><g:message code="Modifier" default="Modifier" /></g:link>
+					<g:actionSubmit class="delete" action="delete" value="${message(code: 'Supprimer', default: 'Supprimer')}" onclick="return confirm('${message(code: 'Etes-vous sur?', default: 'Etes-vous sur?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

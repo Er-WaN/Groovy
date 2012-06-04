@@ -1,16 +1,21 @@
 package restaurant
 
-import org.joda.time.*
-import org.joda.time.contrib.hibernate.*
 
 class Reservation {
     
     int id
-    int table_id
+    Tabl table
     String nom_client
     int nombre_personnes
-    LocalTime heure
+    Date dat
+    int heure
+    int minute
     String commentaire
-    static constraints = {
+    static constraints =
+    {
+        heure(inList:[11, 12, 13, 19, 20, 21, 22, 23])
+        minute(inList:[00, 15, 30, 45])
     }
+    
+    
 }

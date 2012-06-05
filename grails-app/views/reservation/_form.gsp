@@ -18,14 +18,6 @@
 	<g:field type="number" name="nombre_personnes" required="" value="${reservationInstance.nombre_personnes}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'table', 'error')} required">
-	<label for="table">
-		<g:message code="reservation.table.label" default="Table" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="table" optionValue="value" name="table.id" from="${liste.entrySet()}"  optionKey="key"  required="" value="${reservationInstance?.table?.id}" class="many-to-one"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'dat', 'error')} required">
 	<label for="dat">
 		<g:message code="reservation.dat.label" default="Date" />

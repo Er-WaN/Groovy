@@ -10,7 +10,7 @@
 		<a href="#create-plat" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="Créer"/></a></li>
+				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="Accueil"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="Liste des plats" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
@@ -76,7 +76,7 @@
                                   </div>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+					<g:submitButton name="create" class="save" value="${message(code: 'Créer', default: 'Créer')}" />
 				</fieldset>
 			</g:form>
 		</div>

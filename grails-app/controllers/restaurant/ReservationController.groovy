@@ -16,27 +16,14 @@ class ReservationController {
     }
 
     def create() {
-        def liste = [:]
-        restaurant.Tabl.list(sort:"nb_places").each()
-        {
-            liste[it.id] = "Table "+it.id+" : "+it.nb_places+" places"
-        }
-        println(liste)
-        [reservationInstance: new Reservation(params), liste: liste]
+        [reservationInstance: new Reservation(params)]
     }
 
     def save() {
-        def liste = [:]
-        restaurant.Tabl.list(sort:"nb_places").each()
-        {
-            liste[it.id] = "Table "+it.id+" : "+it.nb_places+" places"
-        }
-        def t = Tabl.get(params.table.id)
         def reservationInstance = new Reservation(params)
-        // def reservationInstance = new Reservation(nom_client:params.nom_client, minute:params.minute, heure:params.heure, nombre_personnes:params.nombre_personnes, commentaire:params.commentaire, dat:params.dat, table_id:params.table);
         println("date : "+params)
         if (!reservationInstance.save(flush: true)) {
-            render(view: "create", model: [reservationInstance: reservationInstance, liste: liste])
+            render(view: "create", model: [reservationInstance: reservationInstance])
             return
         }
 

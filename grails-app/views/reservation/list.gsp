@@ -29,9 +29,7 @@
 						<g:sortableColumn property="minute" title="${message(code: 'reservation.minute.label', default: 'Nombre de personnes')}" />
 					
 						<g:sortableColumn property="commentaire" title="${message(code: 'reservation.commentaire.label', default: 'Date')}" />
-					
-						<g:sortableColumn property="dat" title="${message(code: 'reservation.dat.label', default: 'Heure')}" />
-					
+										
 						<g:sortableColumn property="nom_client" title="${message(code: 'reservation.nom_client.label', default: 'Commentaire')}" />
 					
 						<g:sortableColumn property="nombre_personnes" title="${message(code: 'reservation.nombre_personnes.label', default: 'Table')}" />
@@ -46,13 +44,11 @@
 					
 						<td>${fieldValue(bean: reservationInstance, field: "nombre_personnes")}</td>
                                                 
-                                                <td><g:formatDate format="dd-MM-yyyy" date="${reservationInstance.dat}" /></td>
-					
-						<td>${reservationInstance.heure}:${reservationInstance.minute == 0 ? "00" : reservationInstance.minute}</td>
-                                                
+                                                <td><g:formatDate format="dd-MM-yyyy HH:mm" date="${reservationInstance.dat}" /></td>
+					                                                
 						<td>${fieldValue(bean: reservationInstance, field: "commentaire")}</td>
 					
-						<td>${reservationInstance.table.id}</td>					
+						<td>${reservationInstance?.table?.id}</td>					
 					</tr>
 				</g:each>
 				</tbody>

@@ -54,16 +54,7 @@
 				<li class="fieldcontain">
 					<span id="dat-label" class="property-label"><g:message code="reservation.dat.label" default="Date" /></span>
 					
-						<span class="property-value" aria-labelledby="dat-label"><g:formatDate format="dd-MM-yyyy" date="${reservationInstance?.dat}" /></span>
-					
-				</li>
-				</g:if>
-                          
-                                <g:if test="${reservationInstance?.heure}">
-				<li class="fieldcontain">
-					<span id="heure-label" class="property-label"><g:message code="reservation.heure.label" default="Heure" /></span>
-					
-						<span class="property-value" aria-labelledby="heure-label">${reservationInstance.heure}:${reservationInstance.minute == 0 ? "00" : reservationInstance.minute}</span>
+						<span class="property-value" aria-labelledby="dat-label"><g:formatDate format="dd-MM-yyyy HH:mm" date="${reservationInstance?.dat}" /></span>
 					
 				</li>
 				</g:if>

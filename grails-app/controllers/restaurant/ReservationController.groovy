@@ -1,11 +1,17 @@
 package restaurant
 
 import org.springframework.dao.DataIntegrityViolationException
+import groovy.time.*
+import org.codehaus.groovy.runtime.*
+import static java.util.Calendar.*
 
 class ReservationController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def testDatePicker() {
+    }
+    
     def index() {
         redirect(action: "list", params: params)
     }
@@ -21,7 +27,27 @@ class ReservationController {
 
     def save() {
         def reservationInstance = new Reservation(params)
-        println("date : "+params)
+        def d = reservationInstance.dat
+        use(TimeCategory)
+        {
+            
+            def p = d - 2.hours
+            def t = restaurant.Reservation.findAll("from restaurant.Reservation as r where r.dat between '$p' and '$d'").table.id
+        
+            def a = restaurant.Tabl.withCriteria{
+            not {
+                'in'('id', t)
+                }
+            gt('nb_places', reservationInstance.nombre_personnes)
+            order('nb_places', 'asc')
+            }.collect{it.id}
+        }
+        
+        if (a.size() == 0 )
+        {
+            render(view: "create", model: [reservationInstance: reservationInstance])
+            return
+        }        
         if (!reservationInstance.save(flush: true)) {
             render(view: "create", model: [reservationInstance: reservationInstance])
             return

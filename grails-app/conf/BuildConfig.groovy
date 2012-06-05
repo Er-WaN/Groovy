@@ -28,6 +28,7 @@ grails.project.dependency.resolution = {
 
         // runtime 'mysql:mysql-connector-java:5.1.13'
         compile "org.jadira.usertype:usertype.jodatime:1.9"
+        //compile ":jquery-ui:1.8.15"
 
     }
 }

@@ -1,6 +1,5 @@
 package restaurant
 
-
 class Reservation {
     
     int id
@@ -17,6 +16,8 @@ class Reservation {
         minute(inList:[00, 15, 30, 45])
         table(nullable:true)
     }
+    
+
     
     
 }

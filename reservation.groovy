@@ -1,15 +1,13 @@
-def n = new Date()
-def now = n.format("yyyy-MM-dd 00:00:00")
-def h = n.format("hh")
-def m = n.format("mm")
+import org.codehaus.groovy.runtime.TimeCategory
+now = new Date()
+use(TimeCategory)
+    {
+        now2 = now - 2.hours
+        println now2
+    }
 
-def t = restaurant.Reservation.withCriteria {
-    eq('dat', now)   
-}
 
-println t
-println now
-println(h+m)
+def t = restaurant.Reservation.findAll("from restaurant.Reservation as r where r.dat = '$now'").table.id
 
 def a = restaurant.Tabl.withCriteria {
     not {
@@ -19,4 +17,3 @@ def a = restaurant.Tabl.withCriteria {
     order('nb_places', 'asc')
 }.collect{it.id}
 
-println("table choisie: "+a[0])

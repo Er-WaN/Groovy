@@ -23,7 +23,7 @@
 		<g:message code="reservation.dat.label" default="Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="dat" precision="day"  value="${reservationInstance?.dat}"  />
+	<g:datePicker name="dat" precision="minute" years="[2012, 2013]" minute="[00, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]" hours="[11, 12, 13, 19, 20, 21, 22, 23]" value="${reservationInstance?.dat}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'heure', 'error')} required">

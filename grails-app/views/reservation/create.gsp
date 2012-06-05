@@ -1,4 +1,5 @@
 <%@ page import="restaurant.Reservation" %>
+<r:require module="jquery-ui"/>
 <!doctype html>
 <html>
 	<head>

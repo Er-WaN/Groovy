@@ -8,7 +8,7 @@ class UrlMappings {
 		}
                 "/client/choix_formule?/$nb_place?"(controller: "client", action: "choix_formule")
 
-		"/"(view:"/index")
+		"/"(controller: "login")
 		"500"(view:'/error')
 	}
 }

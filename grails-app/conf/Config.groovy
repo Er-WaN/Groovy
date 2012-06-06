@@ -106,4 +106,5 @@ grails.plugins.springsecurity.interceptUrlMap = [
 ]
 
 jodatime.format.html5 = true
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/redirect'
 

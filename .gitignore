@@ -1,8 +1,7 @@
-
 #################
 ## Eclipse
 #################
-
+stacktrace.log
 *.pydevproject
 .project
 .metadata

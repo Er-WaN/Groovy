@@ -20,7 +20,7 @@
     <h1>Tableau de bord</h1>
     <g:if test="${userInstance.getAuthorities().authority[0] == "ROLE_DIRECTOR"}">
       <table>
-        <tr>
+        <th>
           <table>
             <tr>
               <th>Nombre de plats : ${cuisine.Plat.list().size()}</th>
@@ -33,45 +33,11 @@
               </tr>
             </g:each>
           </table>
-        </tr>
-        <tr>
-          <table>
-            <tr>
-              <th>Nombre d'utilisateurs : ${grailsapplication2.User.list().size()}</th>
-            </tr>
-            <g:each in="${grailsapplication2.User.list()}">
-              <tr>
-                <td style="text-indent: 20px">
-                  ${it.libelle}(s) : ${cuisine.Plat.findAll("from Plat as p where p.typeplatid = ?", [it.id]).size()}
-                <td>
-              </tr>
-            </g:each>
-          </table>
-        </tr>
-      </table>
-      <table>
-        <tr>
-          <th>
-            Utilisateurs
-          </th>
-        </tr>
-        <tr>
-          <td>
-            Nombre de membres: ${grailsapplication2.User.count()}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Nombre de membres: ${grailsapplication2.User.count()}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Nombre de membres: ${grailsapplication2.User.count()}
-          </td>
-        </tr>
-      </table>
-    
+        </th>
+        <th>
+          
+        </th>
+      </table>    
     </g:if>
   </div>
   <div class="content scaffold-list">

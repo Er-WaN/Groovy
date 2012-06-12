@@ -423,13 +423,7 @@ tr {
 	border: 0;
 }
 
-tr>td:first-child, tr>th:first-child {
-	padding-left: 1.25em;
-}
 
-tr>td:last-child, tr>th:last-child {
-	padding-right: 1.25em;
-}
 
 td, th {
 	line-height: 1.5em;

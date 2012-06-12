@@ -6,7 +6,7 @@ class AdministrationController {
         def r = session.SPRING_SECURITY_CONTEXT.authentication.principal.authorities
         switch (r) {
             case '[ROLE_USER]':
-                redirect (controller: "administration", action: "accueil")
+                redirect (controller: "client")
                 break
             case '[ROLE_COOKER]':
                 redirect (controller: "administration", action: "accueil")

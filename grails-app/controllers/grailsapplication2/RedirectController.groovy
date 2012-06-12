@@ -6,16 +6,16 @@ class RedirectController {
         def r = session.SPRING_SECURITY_CONTEXT.authentication.principal.authorities
         switch (r) {
             case '[ROLE_USER]':
-                redirect (controller: "redirect", action: "accueil")
+                redirect (contrller: "client")
                 break
             case '[ROLE_COOKER]':
-                redirect (controller: "redirect", action: "accueil")
+                redirect (contrller: "redirect", action: "accueil")
                 break
             case '[ROLE_DIRECTOR]':
-                redirect (controller: "redirect", action: "accueil")
+                redirect (contrller: "redirect", action: "accueil")
                 break
             case '[ROLE_SERVER]':
-                redirect (controller: "serveur")
+                redirect (contrller: "serveur")
                 break
             default:
                 println "Don't know"

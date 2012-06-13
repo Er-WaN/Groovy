@@ -1,0 +1,5 @@
+def r = grailsapplication2.Role.list().id
+for (i in r)
+    {
+        grailsapplication2.UserRole.findAllByUser(it)
+    }

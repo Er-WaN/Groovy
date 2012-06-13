@@ -74,10 +74,12 @@
                     <tr>
                       <th style="width:600px; text-align:left">${plats.libelle}</th>
                       <th style="text-align:right">${plats.prix}€</th>
+                      <th><input type="range"  name="myRange"  title="Curseur" value="0"  min="0" max="10" oninput="document.getElementById('rangeOutput').textContent=value"><span id="rangeOutput">0</span></th>
                     </tr>
                     <tr>
                       <th style="font-size: 12; color: grey; font-style: italic; width:600px; padding-left:30px; text-align:left">${plats.description}</th>
                     </tr>
+                    
                   </table>
                 </tr>
               </g:if>

@@ -2,6 +2,8 @@
 ## Eclipse
 #################
 stacktrace.log
+target/stacktrace.log
+/target/stacktrace.log
 *.pydevproject
 .project
 .metadata

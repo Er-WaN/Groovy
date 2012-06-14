@@ -26,20 +26,6 @@
 	<g:datePicker name="dat" precision="minute" years="[2012, 2013]" minute="[00, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]" hours="[11, 12, 13, 19, 20, 21, 22, 23]" value="${reservationInstance?.dat}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'heure', 'error')} required">
-	<label for="heure">
-		<g:message code="reservation.heure.label" default="Heure" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select name="heure" from="${reservationInstance.constraints.heure.inList}" required="" value="${fieldValue(bean: reservationInstance, field: 'heure')}" valueMessagePrefix="reservation.heure"/>
-        <select name="minute">
-          <option value="0" ${reservationInstance.minute == 0 ? 'selected="selected"' : '' }>00</option>
-          <option value="15" ${reservationInstance.minute == 15 ? 'selected="selected"' : '' }>15</option>
-          <option value="30" ${reservationInstance.minute == 30 ? 'selected="selected"' : '' }>30</option>
-          <option value="45" ${reservationInstance.minute == 40 ? 'selected="selected"' : '' }>45</option>
-        </select>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: reservationInstance, field: 'commentaire', 'error')} ">
 	<label for="commentaire">
 		<g:message code="reservation.commentaire.label" default="Commentaire" />

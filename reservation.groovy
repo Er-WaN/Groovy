@@ -1,19 +1,21 @@
-import org.codehaus.groovy.runtime.TimeCategory
-now = new Date()
+import org.springframework.dao.DataIntegrityViolationException
+import groovy.time.*
+import org.codehaus.groovy.runtime.*
+import static java.util.Calendar.*
+
 use(TimeCategory)
-    {
-        now2 = now - 2.hours
-        println now2
+        {
+            def d = new Date()
+            def p = d - 5.days
+
+
+            def t = restaurant.Reservation.withCriteria{
+            between('dat', p, d)
+            }.table.id
+            
+           
+            
+            
+
+           
     }
-
-
-def t = restaurant.Reservation.findAll("from restaurant.Reservation as r where r.dat = '$now'").table.id
-
-def a = restaurant.Tabl.withCriteria {
-    not {
-        'in'('id', t)
-    }
-    gt('nb_places', 2)
-    order('nb_places', 'asc')
-}.collect{it.id}
-

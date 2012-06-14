@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'reservation.label', default: 'Reservation')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<title><g:message code="Réservation de M/Mme : ${reservationInstance.nom_client}" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#show-reservation" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="table-label" class="property-label"><g:message code="reservation.table.label" default="Table" /></span>
 					
-						<span class="property-value" aria-labelledby="table-label"><g:link controller="tabl" action="show" id="${reservationInstance?.table?.id}">${reservationInstance?.table?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="table-label"><g:link controller="tabl" action="show" id="${reservationInstance?.table?.id}">${reservationInstance.table.id}</g:link></span>
 					
 				</li>
 				</g:if>

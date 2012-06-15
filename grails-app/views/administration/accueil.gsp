@@ -87,7 +87,6 @@
             </tr>
             <tr>
               <th>
-                Nombre de réservations : ${restaurant.Reservation.list().size()}
               </th>
             </tr>
             <tr>

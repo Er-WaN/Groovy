@@ -16,13 +16,13 @@ class ReservationController {
         redirect(action: "list", params: params)
     }
 
+    def create() {
+        [reservationInstance: new Reservation(params)]
+    }
+    
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [reservationInstanceList: Reservation.list(params), reservationInstanceTotal: Reservation.count()]
-    }
-
-    def create() {
-        [reservationInstance: new Reservation(params)]
     }
 
     def save() {

@@ -57,7 +57,7 @@
                       <th style="text-align:right; width:46px">${entres.prix}€</th>
                       <th style="text-align:right; padding-left:10px; padding-top:5px">
                         <div data-role="stepper" data-theme="c">
-                          <input type="text" name="entres.${entres.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
+                          <input type="text" name="commande.entres.${entres.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
                         </div>
                       </th>
                     </tr>
@@ -82,7 +82,7 @@
                       <th style="text-align:right; width:46px">${plats.prix}€</th>
                       <th style="text-align:right; padding-left:10px; padding-top:5px">
                         <div data-role="stepper" data-theme="c">
-                          <input type="text" name="plats.${plats.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
+                          <input type="text" name="commande.plats.${plats.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
                         </div>
                       </th>
                     </tr>
@@ -108,7 +108,7 @@
                       <th style="text-align:right; width:46px">${desserts.prix}€</th>
                       <th style="text-align:right; padding-left:10px; padding-top:5px">
                         <div data-role="stepper" data-theme="c">
-                          <input type="text" name="desserts.${desserts.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
+                          <input type="text" name="commande.desserts.${desserts.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
                         </div>
                       </th>
                     </tr>

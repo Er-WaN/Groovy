@@ -22,7 +22,7 @@ class PlatController {
     }
 
     def save = {
-        println("apres")
+        println(params)
         def platInstance = new Plat(params)
         if (platInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'plat.label', default: 'Plat'), platInstance.id])}"

@@ -2,11 +2,23 @@ package client
 
 class ClientController {
 
-    def index() { }
+    def index()
+    {
+    }
     
-    def carte(){}
+    def carte()
+    {
+    }
     
-    def choix_formule() {}
+    def valider_carte()
+    {
+        println(params)
+    }
+    
+    def choix_formule()
+    {
+        session.nombre_personnes = params.nb_place
+    }
     
     def boissons(){}
     

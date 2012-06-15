@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'reservation.label', default: 'Reservation')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<title><g:message code="Nouvelle réservation" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#create-reservation" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

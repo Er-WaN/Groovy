@@ -8,6 +8,7 @@ class ClientController {
     
     def carte()
     {
+        println(session)
     }
     
     def valider_carte()
@@ -19,7 +20,6 @@ class ClientController {
         commande << entres
         commande << plats
         commande << desserts
-        println(commande)
         def total = 0;
         session.commande = commande
         [commande: commande, total: total]

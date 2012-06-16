@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'plat.label', default: 'Plats')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<title><g:message code="Liste des plats" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#list-plat" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -41,7 +41,7 @@
 					
 						<td>${fieldValue(bean: platInstance, field: "description")}</td>
 					
-						<td>${fieldValue(bean: platInstance, field: "prix")}</td>
+						<td>${fieldValue(bean: platInstance, field: "prix")}€</td>
 					
 						<td>${cuisine.TypePlat.get(platInstance.typeplatid).libelle}</td>
 					

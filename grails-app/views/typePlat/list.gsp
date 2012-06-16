@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'typePlat.label', default: 'TypePlat')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<title><g:message code="Liste des types de plats" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#list-typePlat" class="skip" tabindex="-1"><g:message code="Accueil" default="Skip to content&hellip;"/></a>

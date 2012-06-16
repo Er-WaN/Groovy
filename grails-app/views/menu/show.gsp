@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'menu.label', default: 'Menus')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<title><g:message code="Menu: ${menuInstance.libelle}" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#show-menu" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="prix-label" class="property-label"><g:message code="menu.prix.label" default="Prix" /></span>
 					
-						<span class="property-value" aria-labelledby="prix-label"><g:fieldValue bean="${menuInstance}" field="prix"/></span>
+						<span class="property-value" aria-labelledby="prix-label"><g:fieldValue bean="${menuInstance}" field="prix"/>€</span>
 					
 				</li>
 				</g:if>
@@ -55,7 +55,7 @@
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${menuInstance?.id}" />
 					<g:link class="edit" action="edit" id="${menuInstance?.id}"><g:message code="Modifier" default="Modifier" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'Suprimer', default: 'Supprimer')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:actionSubmit class="delete" action="delete" value="${message(code: 'Suprimer', default: 'Supprimer')}" onclick="return confirm('${message(code: 'Etes-vous sur?', default: 'Etes-vous sur?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

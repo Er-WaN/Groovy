@@ -42,7 +42,6 @@
       <div class='title'>      
         <h1>Tactil-Restaurant</h1>
       </div>
-    </div
       
       <table>
         <tr><h2>Les Entrées:</h2></tr>

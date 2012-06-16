@@ -22,7 +22,7 @@
 		<g:message code="plat.prix.label" default="Prix : " />
 		<span class="required-indicator">* </span>
 	</label>
-	<g:field type="number" name="prix" step="any" required="" value="${platInstance?.prix}"/>
+	<g:field type="number" name="prix" step="any" required="" value="${platInstance?.prix}"/>€
 </div>
 
 

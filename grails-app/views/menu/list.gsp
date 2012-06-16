@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'menu.label', default: 'Menus')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<title><g:message code="Liste des menus" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#list-menu" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -37,7 +37,7 @@
 					
 						<td>${fieldValue(bean: menuInstance, field: "description")}</td>
 					
-						<td>${fieldValue(bean: menuInstance, field: "prix")}</td>
+						<td>${fieldValue(bean: menuInstance, field: "prix")}€</td>
 					
 					</tr>
 				</g:each>

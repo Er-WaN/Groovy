@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'tabl.label', default: 'Tabl')}" />
-		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<title><g:message code="Modifier table ${tablInstance.id}" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#edit-tabl" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -12,7 +12,7 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="Accueil"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="Liste des tables" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="Ajouter une tabmle" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="Ajouter une table" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="edit-tabl" class="content scaffold-edit" role="main">

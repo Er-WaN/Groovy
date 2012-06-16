@@ -9,6 +9,11 @@
   <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Client</title>
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <g:javascript library="jquery.mobile.stepper" />
+    <link rel="stylesheet" href="${resource(dir:'css',file:'jquery.mobile.stepper.css')}" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
     <style type='text/css' media='screen'>
     
     .title{
@@ -16,14 +21,6 @@
     border-style:solid;
     border-width:2px;
     background:#CD853F;
-    }
-    
-       
-    .button{
-    width:300px;height:150px;
-    font-size: 3em;
-    background:#CD853F;
-    cursor: pointer;
     }
     
     h2{
@@ -38,6 +35,9 @@
   </head>
 
   <body>
+  <g:form name="commande[]" url="[action:'valider_carte',controller:'client']">
+      
+    
     <center>
       <div class='title'>      
         <h1>Tactil-Restaurant</h1>
@@ -53,7 +53,12 @@
                   <table>
                     <tr>
                       <th style="width:600px; text-align:left">${entres.libelle}</th>
-                      <th style="text-align:right">${entres.prix}€</th>
+                      <th style="text-align:right; width:46px">${entres.prix}€</th>
+                      <th style="text-align:right; padding-left:10px; padding-top:5px">
+                        <div data-role="stepper" data-theme="c">
+                          <input type="text" name="commande.entres.${entres.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
+                        </div>
+                      </th>
                     </tr>
                     <tr>
                       <th style="font-size: 12; color: grey; font-style: italic; width:600px; padding-left:30px; text-align:left">${entres.description}</th>
@@ -73,8 +78,12 @@
                   <table>
                     <tr>
                       <th style="width:600px; text-align:left">${plats.libelle}</th>
-                      <th style="text-align:right">${plats.prix}€</th>
-                      <th><input type="range"  name="myRange"  title="Curseur" value="0"  min="0" max="10" oninput="document.getElementById('rangeOutput').textContent=value"><span id="rangeOutput">0</span></th>
+                      <th style="text-align:right; width:46px">${plats.prix}€</th>
+                      <th style="text-align:right; padding-left:10px; padding-top:5px">
+                        <div data-role="stepper" data-theme="c">
+                          <input type="text" name="commande.plats.${plats.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
+                        </div>
+                      </th>
                     </tr>
                     <tr>
                       <th style="font-size: 12; color: grey; font-style: italic; width:600px; padding-left:30px; text-align:left">${plats.description}</th>
@@ -95,7 +104,12 @@
                   <table>
                     <tr>
                       <th style="width:600px; text-align:left">${desserts.libelle}</th>
-                      <th style="text-align:right">${desserts.prix}€</th>
+                      <th style="text-align:right; width:46px">${desserts.prix}€</th>
+                      <th style="text-align:right; padding-left:10px; padding-top:5px">
+                        <div data-role="stepper" data-theme="c">
+                          <input type="text" name="commande.desserts.${desserts.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
+                        </div>
+                      </th>
                     </tr>
                     <tr>
                       <th style="font-size: 12; color: grey; font-style: italic; width:600px; padding-left:30px; text-align:left">${desserts.description}</th>
@@ -109,15 +123,9 @@
         </table>
       </table>
    </center>
-  
-  <input type="image" src="${resource(dir:'images',file:'flèche_retour.jpg')}" onclick="retour()"> 
+    <input type="submit" value="Valider">
+  </g:form>
   </body>
 </html>
 
-<script language=javascript> 
 
-function retour()
-{ 
-document.location.href = "../choix_formule/"} 
-
-</script> 

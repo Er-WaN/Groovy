@@ -1,0 +1,19 @@
+
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+
+Server running. Browse to http://localhost:8080/GrailsApplication2
+role: ROLE_COOKER
+2012-06-15 17:39:56,184 [http-bio-8080-exec-5] ERROR errors.GrailsExceptionResolver  - MissingMethodException occurred when processing request: [GET] /GrailsApplication2/administration/accueil
+No signature of method: static restaurant.Reservation.list() is applicable for argument types: () values: []
+Possible solutions: is(java.lang.Object), wait(), find(), wait(long), with(groovy.lang.Closure), print(java.lang.Object). Stacktrace follows:
+org.codehaus.groovy.grails.web.pages.exceptions.GroovyPagesException: Error processing GroovyPageView: No signature of method: static restaurant.Reservation.list() is applicable for argument types: () values: []
+Possible solutions: is(java.lang.Object), wait(), find(), wait(long), with(groovy.lang.Closure), print(java.lang.Object)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:679)
+Caused by: groovy.lang.MissingMethodException: No signature of method: static restaurant.Reservation.list() is applicable for argument types: () values: []
+Possible solutions: is(java.lang.Object), wait(), find(), wait(long), with(groovy.lang.Closure), print(java.lang.Object)
+	at gsp_grailsApplication2_administrationaccueil_gsp$_run_closure2.doCall(gsp_grailsApplication2_administrationaccueil_gsp.groovy:70)
+	at gsp_grailsApplication2_administrationaccueil_gsp.run(gsp_grailsApplication2_administrationaccueil_gsp.groovy:114)
+	... 3 more

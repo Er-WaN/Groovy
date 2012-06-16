@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'tabl.label', default: 'Tabl')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<title><g:message code="Liste des tables" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#list-tabl" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

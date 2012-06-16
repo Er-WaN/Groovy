@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'plat.label', default: 'Plats')}" />
-		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<title><g:message code="Modifier plat: ${platInstance?.libelle}" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#edit-plat" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

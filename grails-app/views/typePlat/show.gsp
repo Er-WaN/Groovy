@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'typePlat.label', default: 'TypePlat')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<title><g:message code="Type de plat: ${typePlatInstance?.libelle}" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#show-typePlat" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -37,7 +37,7 @@
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${typePlatInstance?.id}" />
 					<g:link class="edit" action="edit" id="${typePlatInstance?.id}"><g:message code="Modifier" default="Modifier" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'Supprimer', default: 'Supprimer')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:actionSubmit class="delete" action="delete" value="${message(code: 'Supprimer', default: 'Supprimer')}" onclick="return confirm('${message(code: 'Etes-vous sur?', default: 'Etes-vous sur?')}');" />
 				</fieldset>
 			</g:form>
 		</div>

@@ -23,6 +23,6 @@
 		<g:message code="Menu.prix.label" default="Prix" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="prix" step="any" required="" value="${menuInstance.prix}"/>
+	<g:field type="number" name="prix" step="any" required="" value="${menuInstance.prix}"/>€
 </div>
 

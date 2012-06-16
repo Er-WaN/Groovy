@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'plat.label', default: 'plat')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<title><g:message code="Nouveau plat" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#create-plat" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -15,7 +15,7 @@
 			</ul>
 		</div>
 		<div id="create-plat" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+			<h1><g:message code="Nouveau plat" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -49,7 +49,7 @@
                                                   <g:message code="plat.prix.label" default="Prix : " />
                                                   <span class="required-indicator">* </span>
                                           </label>
-                                          <g:field type="number" name="prix" step="any" required="" value="${platInstance?.prix}"/>
+                                          <g:field type="number" name="prix" step="any" required="" value="${platInstance?.prix}"/>€
                                   </div>
 
 

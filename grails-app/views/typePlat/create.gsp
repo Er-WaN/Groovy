@@ -4,7 +4,7 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'typePlat.label', default: 'TypePlat')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<title><g:message code="Nouveau type de plat" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#create-typePlat" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

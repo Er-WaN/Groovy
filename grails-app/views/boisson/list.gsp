@@ -28,7 +28,7 @@
 					
 						<g:sortableColumn property="prix" title="${message(code: 'boisson.prix.label', default: 'Prix')}" />
 					
-						<th><g:message code="boisson.type.label" default="Type" /></th>
+						<g:sortableColumn property="type" title="${message(code: 'boisson.prix.label', default: 'Type')}" />
 					
 					</tr>
 				</thead>

@@ -39,21 +39,11 @@
     <table style="margin-top:30px;margin-left:20px;margin-right:20px;">
         <tr>
            <td align="center"><input type="button" value="Boissons" class="button" onclick="boisson()"/></td>
-           <td align="center"><input type="button" value="Plat à la carte" class="button" onclick="carte()"/></td>
+           <td align="center"><input type="button" value="Carte" class="button" onclick="carte()"/></td>
            <td align="center"><input type="button" value="Menus" class="button" onclick="menu()"/></td>
         </tr>
-        <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
         <tr>
-           <td></td>
-           <td>
-              <h2>Les formules<br/>
-                 Formule 1:Entrée+Plat+Dessert...............20,00€<br/>
-                 Formule 2:Entrée+Plat ou Plat+Dessert...14,00€<br/>
-                 Formule 3:Plat unique.......................10,00€<br/>
-              </h2>
-           </td>
-           <td></td>
-        </tr>
+        
       </table>        
   </center>
  </body>
@@ -65,7 +55,7 @@
 
 function boisson()
 { 
-document.location.href = "../boissons/"; 
+document.location.href = "../client/boissons/"; 
 } 
 
 function retour()
@@ -75,7 +65,7 @@ document.location.href = "../index";
 
 function carte()
 { 
-document.location.href = "../carte/"; 
+document.location.href = "../client/carte/"; 
 }
 
 function menu()

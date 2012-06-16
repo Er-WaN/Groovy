@@ -9,6 +9,11 @@
   <head>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Client</title>
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <g:javascript library="jquery.mobile.stepper" />
+    <link rel="stylesheet" href="${resource(dir:'css',file:'jquery.mobile.stepper.css')}" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
     <style type='text/css' media='screen'>
     
     .title{
@@ -18,44 +23,51 @@
     background:#CD853F;
     }
     
-       
-    .button{
-    width:300px;height:150px;
-    font-size: 3em;
+    h2{
+      border-color: black;
+    border-style:solid;
+    border-width:2px;
     background:#CD853F;
-    cursor: pointer;
+    width:50%;
     }
       
     </style>
   </head>
 
-  <body>
+  <body>      
     <center>
-    
-    <div class='title'>      
-      <h1>Tactil-Restaurant</h1>
-    </div>
-         
-           <table style="margin-top:30px;margin-left:20px;margin-right:20px;">
+      <div class='title'>      
+        <h1>Tactil-Restaurant</h1>
+      </div>
+      <g:form name="commande[]" url="[action:'valider_carte',controller:'client']">
+      <g:each in="${cuisine.TypeBoisson.list()}" var="t">
+        <table>
+          <tr><h2>${t.libelle}s</h2></tr>
+          <g:each in="${cuisine.Boisson.findAllByType(t)}">
             <tr>
-              <td align="center"><input type="button" value="Apéritifs" class="button" /></td>
-            
-              <td align="center"><input type="button" value="Vins" class="button" /></td>
-            
-              <td align="center"><input type="button" value="Softs" class="button" /></td>
+              <th style="width:550px; text-align:left">${it.libelle}</td>
+              <th>${it.prix}€</td>
+              <th style="text-align:right; padding-left:10px; padding-top:5px">
+                <div data-role="stepper" data-theme="c">
+                  <input type="text" name="commande.boissons.${it.id}" id="stepper1" class="quantity" value="0" min="0" max="20" size="2" data-role="none" />
+                </div>
+              </th>
             </tr>
-           </table>
-        
+          </g:each>
+        </table>
+      </g:each>
+      <table style="padding-top: 20px">
+          <tr>
+            <td>
+              <g:submitButton value="Retour" name="valider" onClick="window.location.href='../choix_formule'"/>
+            <td>
+              <g:submitButton value="Valider" name="valider" />
+            </td>
+          </tr>
+        </table>
+  </g:form>
   </center>
- </body>
- <input type="image" src="${resource(dir:'images',file:'flèche_retour.jpg')}" onclick="retour()"> 
+  </body>
 </html>
 
-<script language=javascript> 
 
-function retour()
-{ 
-document.location.href = "../choix_formule/"; 
-} 
-
-</script> 

@@ -51,7 +51,6 @@ class ReservationController {
                 render(view: "create", model: [reservationInstance: reservationInstance])
                 return
             }
-            println("if4")
             reservationInstance.table = restaurant.Tabl.get(a[0])
             if (!reservationInstance.save(flush: true)) {
                 

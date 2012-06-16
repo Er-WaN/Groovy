@@ -66,7 +66,7 @@
 
 function nb(nombre)
 { 
-document.location.href = "choix_formule/"+nombre; 
+document.location.href = "choix_formule"; 
 }
 
 </script> 

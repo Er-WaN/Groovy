@@ -16,10 +16,12 @@ class MenuController {
     }
 
     def create() {
+        
         [menuInstance: new Menu(params)]
     }
 
     def save() {
+        println("params : "+params)
         def menuInstance = new Menu(params)
         if (!menuInstance.save(flush: true)) {
             render(view: "create", model: [menuInstance: menuInstance])

@@ -60,7 +60,21 @@
                 </tr>
               </g:each>
             </table>
+          </td><td>
+            <table style="width:250px">
+              <tr>
+                <th>Nombre de boissons : ${cuisine.Boisson.list().size()}</th>
+              </tr>
+              <g:each in="${cuisine.TypeBoisson.list()}">
+                <tr>
+                  <td style="text-indent: 20px">
+                    ${it.libelle}(s) : ${cuisine.Boisson.findAllByType(it).size()}
+                  <td>
+                </tr>
+              </g:each>
+            </table>
           </td>
+          
         </g:if>
         <g:if test="${["ROLE_DIRECTOR"].contains(userInstance.getAuthorities().authority[0])}">
           <td>
@@ -102,7 +116,7 @@
     <h1>Administration</h1>
     <table id="t2">
       <g:if test="${["ROLE_DIRECTOR", "ROLE_COOKER"].contains(userInstance.getAuthorities().authority[0])}">
-        <th>
+        <th style="width:150px; padding-right:2px">
           <table>
             <tr>
               <th>
@@ -122,7 +136,7 @@
             </tr>
           </table>
         </th>
-        <th>
+        <th style="width:180px; padding-left:2px; padding-right:2px">
           <table>
             <tr>
               <th>
@@ -141,7 +155,7 @@
             </tr>
           </table>
         </th>
-        <th>
+        <th style="width:155px; padding-left:2px; padding-right:2px">
           <table>
             <tr>
               <th>
@@ -157,7 +171,7 @@
         </th>
       </g:if>
       <g:if test="${["ROLE_COOKER", "ROLE_SERVER"].contains(userInstance.getAuthorities().authority[0])}">
-        <th>
+        <th style="width:150px; padding-left:2px; padding-right:2px">
           <table>
             <tr>
               <th>
@@ -178,7 +192,7 @@
         </th>
       </g:if>
       <g:if test="${["ROLE_DIRECTOR"].contains(userInstance.getAuthorities().authority[0])}">
-        <th>
+        <th style="width:190px; padding-left:2px; padding-right:2px">
           <table>
             <tr>
               <th>
@@ -195,6 +209,21 @@
                 <g:link controller="role">Rôles</g:link>
               </td>
             </tr>
+          </table>
+      </th>
+      </g:if>
+      <g:if test="${["ROLE_COOKER", "ROLE_SERVER"].contains(userInstance.getAuthorities().authority[0])}">
+        <th style="width:190px; padding-left:2px; padding-right:2px">
+          <table>
+            <tr>
+              <th>
+                Gestion des commandes
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <g:link controller="commande">Commandes</g:link>
+              </td>
           </table>
       </th>
       </g:if>

@@ -46,7 +46,7 @@
   <div class="content scaffold-list">
     <h1>Tableau de bord</h1>
       <table id="t1" style="width:700px">
-        <g:if test="${["ROLE_DIRECTOR", "ROLE_COOKER"].contains(userInstance.getAuthorities().authority[0])}">
+        <g:if test="${[ "ROLE_COOKER"].contains(userInstance.getAuthorities().authority[0])}">
           <td>
             <table style="width:250px">
               <tr>
@@ -99,13 +99,28 @@
                 Nombre de menus : ${cuisine.Menu.list().size()}
               </th>
             </tr>
+
+            <g:if test='${["ROLE_DIRECTOR"].contains(userInstance.getAuthorities().authority[0])}'>
+              <tr>
+                <th>
+                  Nombre de plats : ${restaurant.Tabl.list().size()}
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  Nombre de boissons : ${cuisine.Boisson.list().size()}
+                </th>
+              </tr>
+            </g:if>
             <tr>
               <th>
+                Nombre de réservations : ${restaurant.Reservation.list().size()}
               </th>
             </tr>
-            <tr>
+             </tr>
+             <tr>
               <th>
-                Nombre de tables : ${restaurant.Tabl.list().size()}
+                Nombre de commandes : ${restaurant.Commande.findAllByEtat(1).size()}
               </th>
             </tr>
           </table>

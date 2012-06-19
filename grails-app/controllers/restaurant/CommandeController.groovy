@@ -16,6 +16,7 @@ class CommandeController {
     }
     
 
+    
     def show() {
         def commandeInstance = Commande.get(params.id)
         if (!commandeInstance) {

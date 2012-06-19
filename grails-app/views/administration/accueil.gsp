@@ -82,10 +82,10 @@
               <tr>
                 <th>Nombre d'utilisateurs : ${grailsapplication2.User.list().size()}</th>
               </tr>
-              <g:each in="${grailsapplication2.UserRole.list()}">
+              <g:each in="${grailsapplication2.Role.list()}">
                 <tr>
                   <td style="text-indent: 20px">
-                    ${it.role.authority} : ${grailsapplication2.UserRole.findAllByRole(it.role).size()}
+                    ${it.authority} : ${grailsapplication2.UserRole.findAllByRole(it).size()}
                   <td>
                 </tr>
               </g:each>
@@ -151,25 +151,27 @@
             </tr>
           </table>
         </th>
-        <th style="width:180px; padding-left:2px; padding-right:2px">
-          <table>
-            <tr>
-              <th>
-                Gestion des boissons
-              </th>
-            </tr>
-            <tr>
-              <td>
-                <g:link controller="boisson">Boissons</g:link>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <g:link controller="TypeBoisson">Types de boissons</g:link>
-              </td>
-            </tr>
-          </table>
-        </th>
+        <g:if test="${["ROLE_SERVER"].contains(userInstance.getAuthorities().authority[0])}">
+          <th style="width:180px; padding-left:2px; padding-right:2px">
+            <table>
+              <tr>
+                <th>
+                  Gestion des boissons
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <g:link controller="boisson">Boissons</g:link>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <g:link controller="TypeBoisson">Types de boissons</g:link>
+                </td>
+              </tr>
+            </table>
+          </th>
+        </g:if>
         <th style="width:155px; padding-left:2px; padding-right:2px">
           <table>
             <tr>
@@ -185,7 +187,7 @@
           </table>
         </th>
       </g:if>
-      <g:if test="${["ROLE_COOKER", "ROLE_SERVER"].contains(userInstance.getAuthorities().authority[0])}">
+      <g:if test="${["ROLE_DIRECTOR", "ROLE_SERVER"].contains(userInstance.getAuthorities().authority[0])}">
         <th style="width:150px; padding-left:2px; padding-right:2px">
           <table>
             <tr>

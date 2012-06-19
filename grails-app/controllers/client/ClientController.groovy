@@ -49,6 +49,7 @@ class ClientController {
                 {
                    def commandePlatInstance = new restaurant.Commande_plat()
                     commandePlatInstance.type = 1
+                    commandePlatInstance.etat = 0
                     commandePlatInstance.commande = commandeInstance
                     commandePlatInstance.plat_id = i.key.toInteger()
                     commandePlatInstance.quantite = i.value.toInteger()
@@ -64,6 +65,7 @@ class ClientController {
                 {
                     def commandePlatInstance = new restaurant.Commande_plat()
                     commandePlatInstance.type = 2
+                    commandePlatInstance.etat = 0
                     commandePlatInstance.commande = commandeInstance
                     commandePlatInstance.plat_id = i.key.toInteger()
                     commandePlatInstance.quantite = i.value.toInteger()

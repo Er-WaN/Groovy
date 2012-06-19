@@ -15,7 +15,7 @@ class AdministrationController {
                 redirect (controller: "administration", action: "accueil")
                 break
             case '[ROLE_SERVER]':
-                redirect (controller: "serveur")
+                redirect (controller: "administration", action: "accueil")
                 break
             default:
                 println "Don't know"

@@ -66,20 +66,56 @@
 				</g:if>
                           
                                 <li class="fieldcontain">
-                                  <span id="prix-label" class="property-label">Plats</span>
+                                  <span id="plat" class="property-label">Plats</span>
                                   <br /><br />
                                   <g:each in="${cuisine.TypePlat.list()}" var="tp">
                                     <span style="width:100px; font-weight: bold; margin-left:200px">${tp.libelle}</span>
-                                    <table style="width:500px; margin-left:200px">
+                                    <table style="width:600px; margin-left:200px">
                                       <tr>
-                                        <th style="width:70%">Nom</th>
-                                        <th style="width:30%; text-align: center">Quantité</th>
+                                        <th style="width:40%">Nom</th>
+                                        <th style="width:10%; text-align: center">Quantité</th>
+                                        <th style="width:30%; text-align: center">Etat</th>
+                                        <th style="width:20%; text-align: center">Action</th>
                                       </tr>
                                       <g:each in="${restaurant.Commande_plat.findAllByCommande(commandeInstance)}">
                                         <g:if test="${it.type == 1 & cuisine.Plat.get(it.plat_id).typeplatid == tp.id}" >
-                                          <tr>
+                                          <tr style="background-color:${it.etat == 0 ? 'rgb(169, 234, 254)' : (it.etat == 1 ? '#00FE7E' :'#FE96A0')}">
                                             <td style="width:100px">${cuisine.Plat.get(it.plat_id).libelle}</td>
                                             <td style="text-align: center">${it.quantite}</td>
+                                            <td style="text-align:center">
+                                              <g:if test="${it.etat == 0}">
+                                                en attente
+                                              </g:if>
+                                              <g:elseif test="${it.etat == 1}">
+                                                en cours
+                                              </g:elseif>
+                                              <g:else>
+                                                terminé
+                                              </g:else>
+                                            </td>
+                                            <td style="text-align:center">
+                                              <g:if test="${it.etat == 0}">
+                                              <form methode="get" name="cloturer" action="../../commande_plat/commencer_plat">
+                                                <input type="hidden" value="${commandeInstance.id}" name="commande" />
+                                                <input type="hidden" value="${it.plat_id}" name="plat_id" />
+                                                <input type="submit"  value="commencer" />
+                                              </form>
+                                              </g:if>
+                                              <g:if test="${it.etat == 1}">
+                                              <form methode="get" name="cloturer" action="../../commande_plat/cloturer_plat">
+                                                <input type="hidden" value="${commandeInstance.id}" name="commande" />
+                                                <input type="hidden" value="${it.plat_id}" name="plat_id" />
+                                                <input type="submit"  value="fermer" />
+                                              </form>
+                                              </g:if>
+                                              <g:if test="${it.etat == 2}">
+                                              <form methode="get" name="cloturer" action="../../commande_plat/ouvrir_plat">
+                                                <input type="hidden" value="${commandeInstance.id}" name="commande" />
+                                                <input type="hidden" value="${it.plat_id}" name="plat_id" />
+                                                <input type="submit"  value="ré-ouvrir" />
+                                              </form>
+                                              </g:if>
+                                            </td>
                                           </tr>
                                         </g:if>
                                       </g:each>
@@ -87,7 +123,7 @@
                                   </g:each>
                                 
                                 <li class="fieldcontain">
-                                  <span id="prix-label" class="property-label">Boissons</span>
+                                  <span id="boisson" class="property-label">Boissons</span>
                                   <br /><br />
                                   <g:each in="${cuisine.TypeBoisson.list()}" var="tp">
                                     <span style="width:100px; font-weight: bold; margin-left:200px">${tp.libelle}</span>
@@ -95,12 +131,30 @@
                                       <tr>
                                         <th style="width:70%">Nom</th>
                                         <th style="width:30%; text-align: center">Quantité</th>
+                                        <th style="width:30%; text-align: center">Etat</th>
+                                        <th style="width:30%; text-align: center">Action</th>
                                       </tr>
                                       <g:each in="${restaurant.Commande_plat.findAllByCommande(commandeInstance)}">
                                         <g:if test="${it.type == 2 & cuisine.Boisson.get(it.plat_id)?.type?.id == tp.id}" >
-                                          <tr>
+                                          <tr style="background-color:${it.etat ? 'rgb(169, 234, 254)' : '#FE96A0'}">
                                             <td style="width:100px">${cuisine.Boisson.get(it.plat_id).libelle}</td>
                                             <td style="text-align: center">${it.quantite}</td>
+                                            <td>
+                                              <g:if test="${it.etat == true}">
+                                              <form methode="get" name="cloturer" action="../../commande_plat/cloturer_boisson">
+                                                <input type="hidden" value="${commandeInstance.id}" name="commande" />
+                                                <input type="hidden" value="${it.plat_id}" name="plat_id" />
+                                                <input type="submit"  value="fermer" />
+                                              </form>
+                                              </g:if>
+                                              <g:if test="${it.etat == false}">
+                                              <form methode="get" name="cloturer" action="../../commande_plat/ouvrir_boisson">
+                                                <input type="hidden" value="${commandeInstance.id}" name="commande" />
+                                                <input type="hidden" value="${it.plat_id}" name="plat_id" />
+                                                <input type="submit"  value="ouvrir" />
+                                              </form>
+                                              </g:if>
+                                            </td>
                                           </tr>
                                         </g:if>
                                       </g:each>

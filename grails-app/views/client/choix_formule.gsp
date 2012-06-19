@@ -40,7 +40,6 @@
         <tr>
            <td align="center"><input type="button" value="Boissons" class="button" onclick="boisson()"/></td>
            <td align="center"><input type="button" value="Carte" class="button" onclick="carte()"/></td>
-           <td align="center"><input type="button" value="Menus" class="button" onclick="menu()"/></td>
         </tr>
         <tr>
         

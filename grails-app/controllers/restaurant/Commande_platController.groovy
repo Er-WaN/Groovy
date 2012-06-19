@@ -19,6 +19,53 @@ class Commande_platController {
         [commande_platInstance: new Commande_plat(params)]
     }
 
+    def cloturer_plat()
+    {
+        def commande = restaurant.Commande.get(params.commande)
+        def plat = params.plat_id.toInteger()
+        def cp = restaurant.Commande_plat.find("from restaurant.Commande_plat where commande = ? and plat_id = ? and type = 1", commande, plat)
+        cp.etat = 2
+        cp.save(flush:true)
+        redirect(action: "show", controller: "commande", id: commande.id, fragment: "plat")
+    }
+    def commencer_plat()
+    {
+        def commande = restaurant.Commande.get(params.commande)
+        def plat = params.plat_id.toInteger()
+        def cp = restaurant.Commande_plat.find("from restaurant.Commande_plat where commande = ? and plat_id = ? and type = 1", commande, plat)
+        cp.etat = 1
+        cp.save(flush:true)
+        redirect(action: "show", controller: "commande", id: commande.id, fragment: "plat")
+    }
+    def ouvrir_plat()
+    {
+        def commande = restaurant.Commande.get(params.commande)
+        def plat = params.plat_id.toInteger()
+        def cp = restaurant.Commande_plat.find("from restaurant.Commande_plat where commande = ? and plat_id = ? and type = 1", commande, plat)
+        cp.etat = 0
+        cp.save(flush:true)
+        redirect(action: "show", controller: "commande", id: commande.id, fragment: "plat")
+    }
+    
+    def cloturer_boisson()
+    {
+        def commande = restaurant.Commande.get(params.commande)
+        def plat = params.plat_id.toInteger()
+        def cp = restaurant.Commande_plat.find("from restaurant.Commande_plat where commande = ? and plat_id = ? and type = 2", commande, plat)
+        cp.etat = false
+        cp.save(flush:true)
+        redirect(action: "show", controller: "commande", id: commande.id, fragment: "boisson")
+    }
+    def ouvrir_boisson()
+    {
+        def commande = restaurant.Commande.get(params.commande)
+        def plat = params.plat_id.toInteger()
+        def cp = restaurant.Commande_plat.find("from restaurant.Commande_plat where commande = ? and plat_id = ? and type = 2", commande, plat)
+        cp.etat = true
+        cp.save(flush:true)
+        redirect(action: "show", controller: "commande", id: commande.id, fragment: "boisson")
+    }
+    
     def save() {
         def commande_platInstance = new Commande_plat(params)
         if (!commande_platInstance.save(flush: true)) {
